@@ -33,7 +33,6 @@ export default function EnhancedNavbar() {
   }, []);
 
   useEffect(() => {
-    // Cerrar el menú móvil al cambiar de ruta
     setIsMenuOpen(false);
   }, [location.pathname]);
 
@@ -44,6 +43,7 @@ export default function EnhancedNavbar() {
       navigate('/');
     } catch (error) {
       toast.error('Error al cerrar sesión');
+      console.error('Error al cerrar sesión:', error);
     }
   };
 
